@@ -1,22 +1,29 @@
 let font1;
 let font2;
-let loadedFont;
+let chosenFont;
 
 async function setup(){
-    font1 = await loadFont(assets/Kablammo-Regular-VariableFont_MORF.ttf);
-    font2 = await loadFont(assets/Akronim-Regular.ttf);
+    font1 = await loadFont('assets/OpenSans-VariableFont_wdth,wght.ttf');
+    font2 = await loadFont('assets/Akronim-Regular.ttf');
     createCanvas(400, 400);
+    chosenFont = font1
 }
 
 function draw(){
-    textFont(loadedFont)
-    text('Lorem ipsum dolor sit amet');
+    background(0);
+    fill(160, 51, 250);
+    stroke(255, 160, 15);
+    strokeWeight(3);
+    textSize(25);
+    textAlign(CENTER);
+    textFont(chosenFont)
+    text('Lorem ipsum dolor sit amet', 200, 200);
 }
 
 function keyPressed(){
-    if (key === 'z' && loadedFont === font1){
-        loadedFont = font2
-    } else if (key=== 'z' && loadedFont === font2){
-        loadedFont = font1
+    if (key === 'f' && chosenFont === font1){
+        chosenFont = font2
+    } else if (key=== 'f' && chosenFont === font2){
+        chosenFont = font1
     }
 }
