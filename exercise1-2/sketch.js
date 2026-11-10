@@ -16,7 +16,7 @@ function draw(){
     strokeWeight(3);
     textSize(25);
     textAlign(CENTER);
-    textFont(chosenFont)
+    textFont(chosenFont);
     text('Lorem ipsum dolor sit amet', 200, 200);
 }
 
